@@ -141,11 +141,6 @@
     <skipSurefireReport>true</skipSurefireReport>
   </properties>
 
-  <dependencyManagement>
-    <dependencies>
-    </dependencies>
-  </dependencyManagement>
-
   <dependencies>
 
     <dependency>
@@ -323,7 +318,7 @@
           <artifactId>maven-scm-publish-plugin</artifactId>
           <version>1.1</version>
           <configuration>
-            <content>${project.build.directory}/site</content>
+            <content>${project.build.directory}/site</content><!-- no need to site:stage -->
           </configuration>
         </plugin>
       </plugins>
