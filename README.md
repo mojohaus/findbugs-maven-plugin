@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/gleclaire/findbugs-maven-plugin.svg?branch=master)](https://travis-ci.org/gleclaire/findbugs-maven-plugin)
+[![Build Status](https://travis-ci.org/mojohaus/findbugs-maven-plugin.svg?branch=master)](https://travis-ci.org/mojohaus/findbugs-maven-plugin)
 
 # **Note:**  CodeHaus has been taken off-line.
 
@@ -7,37 +7,42 @@ Snapshots of the plugin are now located in the Sonatype Repository at https://os
 Building findbugs-maven-plugin Requirements
 =====================
 
-Java 7 is required.  This will allow analysis of bytecode up to Java 8
+Java 7 is required.  This will allow analysis of bytecode up to Java 8.
 
 
 
 findbugs-maven-plugin
 =====================
 
-Maven Mojo Plug-In to generate reports based on the FindBugs Analyzer
+Maven Mojo Plugin to generate reports based on the FindBugs Analyzer.
 
 Run all test
-mvn -Prun-its clean install
+
+    mvn -Prun-its clean install
 
 Skip tests
-mvn -DskipTests=true clean install
+
+    mvn -DskipTests=true clean install
 
 Run tests on findbugs test source code that is local instead of from FindBugs SVN repository
-mvn -DtestSrc=local -DlocalTestSrc=/opt/findBugs/findbugsTestCases/src -Prun-its clean install
+
+    mvn -DtestSrc=local -DlocalTestSrc=/opt/findBugs/findbugsTestCases/src -Prun-its clean install
  
 
 Run selected tests
-mvn -Prun-its -Dinvoker.test=build-*,basic-1,check clean install
+
+    mvn -Prun-its -Dinvoker.test=build-*,basic-1,check clean install
 
 
 Run tests in debugger
-mvn -Dmaven.surefire.debug="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8000 -Xnoagent -Djava.compiler=NONE" -Prun-its clean install 
+
+    mvn -Dmaven.surefire.debug="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8000 -Xnoagent -Djava.compiler=NONE" -Prun-its clean install 
 
 
 Run selected tests in debugger
-mvn -Dmaven.surefire.debug="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8000 -Xnoagent -Djava.compiler=NONE" -Prun-its -Dinvoker.test=build-*,basic-1,check clean install
 
+    mvn -Dmaven.surefire.debug="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8000 -Xnoagent -Djava.compiler=NONE" -Prun-its -Dinvoker.test=build-*,basic-1,check clean install
 
 Run gui with a specific version 
 
-mvn org.codehaus.mojo:findbugs-maven-plugin:3.0.2-SNAPSHOT:gui 
+    mvn org.codehaus.mojo:findbugs-maven-plugin:3.0.4-SNAPSHOT:gui 
