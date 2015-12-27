@@ -1,11 +1,13 @@
-
-.classpath
-
+target/
 .project
-
-.settings/*
-
-target/*
-findbugs-maven-plugin.ipr
-findbugs-maven-plugin.iws
-*.asc
+.classpath
+.settings/
+.svn/
+bin/
+# Intellij
+*.ipr
+*.iml
+.idea
+out/
+.DS_Store
+.java-version
